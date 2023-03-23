@@ -1,10 +1,18 @@
 package services
 
 import (
-	"github/meepozZza/statistics-server/src/database"
+	"github.com/meepozZza/statistics-service/src/database"
 
 	"github.com/blockloop/scan"
 )
+
+type Report struct {
+	DAU uint32 `db:"DAU"`
+}
+
+func test() {
+
+}
 
 func getDAU() uint32 {
 	var DAU uint32 = 0

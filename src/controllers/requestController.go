@@ -1,8 +1,9 @@
 package controllers
 
 import (
-	"github/meepozZza/statistics-server/src/database"
-	"github/meepozZza/statistics-server/src/models"
+	"github.com/meepozZza/statistics-service/src/database"
+	"github.com/meepozZza/statistics-service/src/models"
+	LocalServices "github.com/meepozZza/statistics-service/src/services"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -56,7 +57,15 @@ func (controller RequestController) Report(c *fiber.Ctx) error {
 	// 	return err
 	// }
 
-	return c.JSON(models.Report{
-		DAU: services.getDAU(),
-	})
+	LocalServices.test()
+
+	report := LocalServices.Report{
+		DAU: LocalServices.getDAU(),
+	}
+
+	return c.JSON(report)
+
+	// return c.JSON(models.Report{
+	// 	DAU: services.Report{},
+	// })
 }

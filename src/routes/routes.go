@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github/meepozZza/statistics-server/src/controllers"
+	"github.com/meepozZza/statistics-service/src/controllers"
 
 	"github.com/gofiber/fiber/v2"
 )
