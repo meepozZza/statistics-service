@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  backend:
+    build: .
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    depends_on:
+      - clickhouse
+    networks:
+      - backend
+
+  clickhouse:
+    image: yandex/clickhouse-server:21.3.20.1
+    volumes:
+      - ./docker/.data/clickhouse:/var/lib/clickhouse
+    environment:
+      # Default user and database will be created using `init-defaults.sh` script
+      CLICKHOUSE_HOST: clickhouse
+      CLICKHOUSE_PORT: 8123
+      CLICKHOUSE_DB: default
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: default
+    ports:
+      - 9000:9000
+      - 8123:8123
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
