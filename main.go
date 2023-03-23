@@ -1,8 +1,8 @@
 package main
 
 import (
-	"statistics-service/src/database"
-	"statistics-service/src/routes"
+	"github/meepozZza/statistics-server/src/database"
+	"github/meepozZza/statistics-server/src/routes"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"

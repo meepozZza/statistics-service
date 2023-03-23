@@ -1,4 +1,4 @@
-module statistics-service
+module github/meepozZza/statistics-server
 
 go 1.18
 

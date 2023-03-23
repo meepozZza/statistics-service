@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"statistics-service/src/database"
-	"statistics-service/src/models"
+	"github/meepozZza/statistics-server/src/database"
+	"github/meepozZza/statistics-server/src/models"
 
 	"github.com/gofiber/fiber/v2"
 )

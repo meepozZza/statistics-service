@@ -1,7 +1,7 @@
 package services
 
 import (
-	"statistics-service/src/database"
+	"github/meepozZza/statistics-server/src/database"
 
 	"github.com/blockloop/scan"
 )
